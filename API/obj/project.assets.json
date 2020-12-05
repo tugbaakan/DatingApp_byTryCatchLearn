@@ -1565,31 +1565,34 @@
     "net5.0": [
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 5.0.0",
       "Microsoft.AspNetCore.Authentication.OpenIdConnect >= 5.0.0",
+      "Microsoft.EntityFrameworkCore.Analyzers >= 5.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 5.0.0",
       "Microsoft.EntityFrameworkCore.Sqlite >= 5.0.0",
       "Swashbuckle.AspNetCore >= 5.6.3"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\tugbaa\\.nuget\\packages\\": {}
+    "C:\\Users\\admin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\tugbaa\\Documents\\demo\\DatingApp\\API\\API.csproj",
+      "projectUniqueName": "c:\\Users\\admin\\Documents\\GitHub\\DatingApp_byTryCatchLearn\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "C:\\Users\\tugbaa\\Documents\\demo\\DatingApp\\API\\API.csproj",
-      "packagesPath": "C:\\Users\\tugbaa\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\tugbaa\\Documents\\demo\\DatingApp\\API\\obj\\",
+      "projectPath": "c:\\Users\\admin\\Documents\\GitHub\\DatingApp_byTryCatchLearn\\API\\API.csproj",
+      "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
+      "outputPath": "c:\\Users\\admin\\Documents\\GitHub\\DatingApp_byTryCatchLearn\\API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\tugbaa\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
-        "https://www.nuget.org/api/v2/": {}
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net5.0": {
@@ -1620,6 +1623,10 @@
             "noWarn": [
               "NU1605"
             ]
+          },
+          "Microsoft.EntityFrameworkCore.Analyzers": {
+            "target": "Package",
+            "version": "[5.0.0, )"
           },
           "Microsoft.EntityFrameworkCore.Design": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
