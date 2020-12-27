@@ -28,13 +28,13 @@ namespace API.Controllers
         [HttpPost("register")]
         public async Task<ActionResult<UserDto>> Register(RegisterDto registerdto)
         {
-            if (await UserExist(registerdto.Username)) return BadRequest("UserName is already taken");
+            if (await UserExist(registerdto.UserName)) return BadRequest("UserName is already taken");
 
             var user = _mapper.Map<AppUser>(registerdto);
 
             using var hmac = new HMACSHA512();
 
-            user.UserName = registerdto.Username.ToLower();
+            user.UserName = registerdto.UserName.ToLower();
             user.PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(registerdto.Password));
             user.PasswordSalt = hmac.Key;
 
@@ -55,7 +55,7 @@ namespace API.Controllers
         {
             var user = await _context.Users
                 .Include(p => p.Photos)
-                .SingleOrDefaultAsync(x => x.UserName == logindto.Username);
+                .SingleOrDefaultAsync(x => x.UserName == logindto.UserName);
             if (user == null) return Unauthorized("Invalid UserName");
 
             using var hmac = new HMACSHA512(user.PasswordSalt);
