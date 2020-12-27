@@ -127,3 +127,5 @@ C:\Users\admin\Documents\GitHub\DatingApp_byTryCatchLearn\API\obj\Debug\net5.0\A
 C:\Users\admin\Documents\GitHub\DatingApp_byTryCatchLearn\API\bin\Debug\net5.0\Data\UserSeedData.json
 C:\Users\admin\Documents\GitHub\DatingApp_byTryCatchLearn\API\bin\Debug\net5.0\AutoMapper.dll
 C:\Users\admin\Documents\GitHub\DatingApp_byTryCatchLearn\API\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\admin\Documents\GitHub\DatingApp_byTryCatchLearn\API\bin\Debug\net5.0\CloudinaryDotNet.dll
+C:\Users\admin\Documents\GitHub\DatingApp_byTryCatchLearn\API\bin\Debug\net5.0\Newtonsoft.Json.dll
