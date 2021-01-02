@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { ToastrService } from 'ngx-toastr';
 import { AccountService } from '../_services/account.service';
+import { ToastrService } from 'ngx-toastr';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidatorFn, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -27,7 +27,7 @@ export class RegisterComponent implements OnInit {
   intitializeForm() {
     this.registerForm = this.fb.group({
       gender: ['male'],
-      userName: ['', Validators.required],
+      username: ['', Validators.required],
       knownAs: ['', Validators.required],
       dateOfBirth: ['', Validators.required],
       city: ['', Validators.required],

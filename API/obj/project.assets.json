@@ -1766,11 +1766,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\admin\\Documents\\GitHub\\DatingApp_byTryCatchLearn\\API\\API.csproj",
+      "projectUniqueName": "C:\\Users\\admin\\Documents\\GitHub\\DatingApp_byTryCatchLearn\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "c:\\Users\\admin\\Documents\\GitHub\\DatingApp_byTryCatchLearn\\API\\API.csproj",
+      "projectPath": "C:\\Users\\admin\\Documents\\GitHub\\DatingApp_byTryCatchLearn\\API\\API.csproj",
       "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\admin\\Documents\\GitHub\\DatingApp_byTryCatchLearn\\API\\obj\\",
+      "outputPath": "C:\\Users\\admin\\Documents\\GitHub\\DatingApp_byTryCatchLearn\\API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1862,7 +1862,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200-preview.20601.7\\RuntimeIdentifierGraph.json"
       }
     }
   }
