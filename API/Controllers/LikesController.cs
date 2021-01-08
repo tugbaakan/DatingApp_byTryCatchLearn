@@ -13,13 +13,10 @@ namespace API.Controllers
     [Authorize]
     public class LikesController : BaseAPIController
     {
-
-        private readonly IUserRepository _userRepository;
-        private readonly ILikesRepository _likesRepository;
-        public LikesController(IUserRepository userRepository, ILikesRepository likesRepository)
-        {
-            _likesRepository = likesRepository;
-            _userRepository = userRepository;
+        private readonly IUnitOfWork _unitOfWork;
+        public LikesController(IUnitOfWork unitOfWork)
+        {  
+            _unitOfWork = unitOfWork;
         }
 
         [HttpPost("{username}")]
@@ -27,15 +24,15 @@ namespace API.Controllers
         {
             var sourceUserId = User.GetUserId();
 
-            var likedUser = await _userRepository.GetUserByUserNameAsync(userName);
+            var likedUser = await _unitOfWork.UserRepository.GetUserByUserNameAsync(userName);
 
-            var sourceUser = await _likesRepository.GetUserWithLikes(sourceUserId);
+            var sourceUser = await _unitOfWork.LikesRepository.GetUserWithLikes(sourceUserId);
 
             if(likedUser == null) return NotFound();
 
             if (sourceUser.UserName == userName) return BadRequest("You cannot like yourself");
 
-            var userLike = await _likesRepository.GetUserLike(sourceUserId, likedUser.Id);
+            var userLike = await _unitOfWork.LikesRepository.GetUserLike(sourceUserId, likedUser.Id);
  
             if (userLike != null ) return BadRequest("You already liked this user");
 
@@ -47,7 +44,7 @@ namespace API.Controllers
 
             sourceUser.LikedUsers.Add(userLike);
 
-            if (await _userRepository.SaveAllAsync()) return Ok();
+            if (await _unitOfWork.Complete()) return Ok();
 
             return BadRequest("Failed to like user");
 
@@ -57,7 +54,7 @@ namespace API.Controllers
         public async Task<ActionResult<IEnumerable<LikeDto>>> GetUserLikes ([FromQuery]LikesParams likesParams)
         {
             likesParams.UserId = User.GetUserId();
-            var users = await _likesRepository.GetUserLikes(likesParams);
+            var users = await _unitOfWork.LikesRepository.GetUserLikes(likesParams);
 
             Response.AddPaginationHeader(users.CurrentPage, users.PageSize, users.TotalCount, users.TotalPages);
  
