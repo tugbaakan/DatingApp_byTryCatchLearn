@@ -135,3 +135,5 @@ C:\Users\admin\Documents\GitHub\DatingApp_byTryCatchLearn\API\bin\Debug\net5.0\M
 C:\Users\admin\Documents\GitHub\DatingApp_byTryCatchLearn\API\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
 C:\Users\admin\Documents\GitHub\DatingApp_byTryCatchLearn\API\bin\Debug\net5.0\Microsoft.Extensions.Identity.Core.dll
 C:\Users\admin\Documents\GitHub\DatingApp_byTryCatchLearn\API\bin\Debug\net5.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\admin\Documents\GitHub\DatingApp_byTryCatchLearn\API\bin\Debug\net5.0\Npgsql.dll
+C:\Users\admin\Documents\GitHub\DatingApp_byTryCatchLearn\API\bin\Debug\net5.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
