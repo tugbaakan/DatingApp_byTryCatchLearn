@@ -78,7 +78,8 @@ namespace API.Controllers
             var photo = new Photo
             {
                 Url = result.SecureUrl.AbsoluteUri,
-                PublicId = result.PublicId
+                PublicId = result.PublicId,
+                Approved = false
             };
 
             if (user.Photos.Count == 0)
