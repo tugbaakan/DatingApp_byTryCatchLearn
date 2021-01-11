@@ -29,7 +29,10 @@ namespace API.Data
         }
         public async Task<AppUser> GetUserByIdAsync(int id)
         {
-            return await _context.Users.FindAsync(id);
+            return await _context.Users
+                .Where(p => p.Id == id)
+                .Include(p => p.Photos)
+                .SingleOrDefaultAsync();
         }
         public async Task<AppUser> GetUserByUserNameAsync(string userName)
         {
@@ -37,12 +40,18 @@ namespace API.Data
                 .Include(p => p.Photos)
                 .SingleOrDefaultAsync(x => x.UserName == userName);
         }
-        public async Task<MemberDto> GetMemberAsync(string userName)
+        public async Task<MemberDto> GetMemberAsync(string userName, bool isCurrentUser)
         {
-            return await _context.Users
+            var query = _context.Users
                 .Where(x => x.UserName == userName)
                 .ProjectTo<MemberDto>(_mapper.ConfigurationProvider)
-                .SingleOrDefaultAsync();
+                .AsQueryable();
+            
+            if (isCurrentUser) 
+                query = query.IgnoreQueryFilters();
+                
+            return await query.FirstOrDefaultAsync();
+
         }
 
         public void Update(AppUser user)

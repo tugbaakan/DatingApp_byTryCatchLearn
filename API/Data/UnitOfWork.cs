@@ -8,10 +8,12 @@ namespace API.Data
     {
         private readonly IMapper _mapper;
         private readonly DataContext _context;
-        public UnitOfWork(DataContext context, IMapper mapper)
+        private readonly IPhotoService _photoService;
+        public UnitOfWork(DataContext context, IMapper mapper, IPhotoService photoService)
         {
             _context = context;
             _mapper = mapper;
+            _photoService = photoService;
         }
 
         public IUserRepository UserRepository => new UserRepository(_context, _mapper);
@@ -19,6 +21,7 @@ namespace API.Data
         public IMessageRepository MessageRepository => new MessageRepository(_context, _mapper);
 
         public ILikesRepository LikesRepository => new LikesRepository(_context);
+        public IPhotoRepository PhotoRepository => new PhotoRepository(_context, _mapper, _photoService);
 
         public async Task<bool> Complete()
         {
