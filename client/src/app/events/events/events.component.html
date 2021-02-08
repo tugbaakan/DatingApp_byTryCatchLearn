@@ -1,0 +1,22 @@
+<div class="row" *ngIf="events?.length === 0">
+    <h3>No events</h3>
+</div>
+
+<div class="row" *ngIf="events?.length > 0">
+    <table class="table table-hover" style="cursor: pointer">
+        <tr>
+            <th style="width: 40%">Event Name</th>
+            <th style="width: 20%">Event Location</th>
+            <th style="width: 20%">Creator</th>
+        </tr>
+        <tr *ngFor="let event of events">
+            <td>{{event.name}}</td>  
+            <td>{{event.location}}</td>  
+            <td>{{event.creatorUser}}</td>
+            <td>
+                <button (click)="attendEvent(event.id)" class='btn btn-danger'>Attend</button>
+            </td>
+        </tr>
+    </table>
+</div>
+

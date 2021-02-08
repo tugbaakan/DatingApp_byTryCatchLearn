@@ -22,7 +22,8 @@ namespace API.Data
 
         public ILikesRepository LikesRepository => new LikesRepository(_context);
         public IPhotoRepository PhotoRepository => new PhotoRepository(_context, _mapper, _photoService);
-
+        public IEventRepository EventRepository => new EventRepository(_context, _mapper);
+        public IAttendeeRepository AttendeeRepository => new AttendeeRepository(_context, _mapper);
         public async Task<bool> Complete()
         {
             return await _context.SaveChangesAsync() > 0;

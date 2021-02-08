@@ -1,0 +1,15 @@
+<td *ngIf="event" > kahvaltı</td>
+
+
+<div class="row" >
+    <table class="table table-hover" style="cursor: pointer">
+        <tr>
+            <th style="width: 40%">Username</th>
+        </tr>
+        <tr *ngFor="let attendee of event"  
+        routerLink='{{"/users/" + attendee.userName  }}' >
+            <td>{{attendee.userName}}</td>  
+        </tr>
+    </table>
+</div>
+
